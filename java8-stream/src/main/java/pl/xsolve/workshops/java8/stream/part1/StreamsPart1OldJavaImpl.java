@@ -16,7 +16,6 @@ public class StreamsPart1OldJavaImpl implements StreamsPart1 {
         return blondes;
     }
 
-
     @Override
     public Partner findSmartestBlonde(final List<Partner> potentialPartners){
         List<Partner> blondes = findBlondes(potentialPartners);
@@ -29,7 +28,10 @@ public class StreamsPart1OldJavaImpl implements StreamsPart1 {
         return smartestSoFar;
     }
 
-
-
-
+    @Override
+    public void addYears(int i, List<Partner> partners) {
+        for (Partner partner : partners){
+            partner.setAge(partner.getAge() + i);
+        }
+    }
 }

@@ -10,13 +10,19 @@ public class StreamsPart1Java8Impl implements StreamsPart1 {
         return potentialPartners.stream().filter(Partner::isBlonde).collect(Collectors.toList());
     }
 
-
     @Override
     public Partner findSmartestBlonde(final List<Partner> potentialPartners){
         return findBlondes(potentialPartners).stream().max((p1, p2) -> p1.getAge().compareTo(p2.getAge())).orElse(potentialPartners.get(0));
     }
 
+    @Override
+    public void addYears(int i, List<Partner> partners) {
+        partners.parallelStream()
+                .forEach(p -> p.setAge(p.getAge() + i));
 
+    }
 
+    //TODO: map (with some fake DAO
 
+    //TODO: findFirst (short circuit)
 }

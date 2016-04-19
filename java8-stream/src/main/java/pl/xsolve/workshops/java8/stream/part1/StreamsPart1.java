@@ -6,4 +6,6 @@ public interface StreamsPart1 {
     List<Partner> findBlondes(List<Partner> potentialPartners);
 
     Partner findSmartestBlonde(List<Partner> potentialPartners);
+
+    void addYears(int i, List<Partner> partners);
 }
