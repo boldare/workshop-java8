@@ -20,7 +20,7 @@ public class LazyEvaluationTest {
         RestaurantAnalizer analizer = new RestaurantAnalizerJava8Impl();
 
         Assert.assertFalse(analizer.isAllEntriesFreeWifi(MC_DONALDS_FILE_NAME));
-        Assert.assertTrue(HALF_OF_FILE > analizer.getProcessedLinesCounter());
+        Assert.assertTrue("was: " + analizer.getProcessedLinesCounter(), HALF_OF_FILE > analizer.getProcessedLinesCounter());
     }
 
 
@@ -29,6 +29,6 @@ public class LazyEvaluationTest {
         RestaurantAnalizer analizer = new RestaurantAnalizerOldJavaImpl();
 
         Assert.assertFalse(analizer.isAllEntriesFreeWifi(MC_DONALDS_FILE_NAME));
-        Assert.assertTrue(HALF_OF_FILE > analizer.getProcessedLinesCounter());
+        Assert.assertTrue("was: " + analizer.getProcessedLinesCounter(), HALF_OF_FILE > analizer.getProcessedLinesCounter());
     }
 }

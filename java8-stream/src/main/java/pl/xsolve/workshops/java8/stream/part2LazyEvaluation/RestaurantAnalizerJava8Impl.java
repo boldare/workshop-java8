@@ -14,8 +14,8 @@ public class RestaurantAnalizerJava8Impl extends RestaurantAnalizer {
         try ( Stream<String> stream = Files.lines(path).skip(NUMBER_OF_HEADER_LINES)) {
 
             return stream.map(line -> lineToRestaurant(line))
-            .filter(it -> it != null)
-            .allMatch(it -> it.getFreeWiFi());
+                .filter(it -> it != null)
+                .allMatch(it -> it.getFreeWiFi());
 
         } catch (Exception e){
            throw e;
