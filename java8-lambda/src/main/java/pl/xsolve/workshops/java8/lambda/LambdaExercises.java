@@ -6,12 +6,24 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public interface LambdaExercises {
-    void sortCollection(List<Integer> toSort);
-    Future<Integer> multiply(final Integer value, final Integer multiplier);
 
-    default <T> List<T> mapList(List<String> input, Function<String, T> function) {
-        return input.stream().map(function).collect(Collectors.toList());
-    }
+    void sortAscending(List<Integer> toSort);
+
+    void sortDescending(List<Integer> toSort);
+
+    void sortStringsAscending(List<String> toSort);
+
+    Future<Integer> multiply(Integer value, Integer multiplier);
+
+    List<String> evenOdd(List<String> input);
 
     List<Integer> mapToListOfLengths(List<String> input);
+
+    List<String> applyPredicates(List<String> input);
+
+    List<String> transformList(List<String> input);
+
+    default <T, R> List<R> map(List<T> input, Function<T, R> function) {
+        return input.stream().map(function).collect(Collectors.toList());
+    }
 }
