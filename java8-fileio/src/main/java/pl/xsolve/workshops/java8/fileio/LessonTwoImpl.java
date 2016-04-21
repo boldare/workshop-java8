@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 import static pl.xsolve.workshops.java8.fileio.dto.RestaurantDto.DEFAULT_SEPARATOR;
 
-public class LessonTwoImpl extends LessonOneImpl implements LessonTwo {
+public class LessonTwoImpl extends LessonOneSolutionsImpl implements LessonTwo {
 
     @Override
     public void correctData() {
