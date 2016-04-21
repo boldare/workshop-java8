@@ -1,4 +1,6 @@
-package pl.xsolve.workshops.java8.stream.part1;
+package pl.xsolve.workshops.java8.stream.part1.operations;
+
+import pl.xsolve.workshops.java8.stream.Partner;
 
 import java.util.ArrayList;
 import java.util.List;

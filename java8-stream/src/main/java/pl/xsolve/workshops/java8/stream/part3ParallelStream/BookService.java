@@ -16,8 +16,11 @@ public class BookService {
         return findNonNullBooks(ids.stream());
     }
 
+    //TODO: leave same as findByIdsSequentially
+    /**
+     * Implement using a parallel stream.
+     */
     public List<Book> findByIdsParalelly(Collection<Integer> ids){
-        //TODO: leave same as findByIdsSequentially
         return findNonNullBooks(ids.parallelStream());
     }
 

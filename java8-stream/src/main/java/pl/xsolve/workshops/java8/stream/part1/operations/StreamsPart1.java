@@ -1,4 +1,6 @@
-package pl.xsolve.workshops.java8.stream.part1;
+package pl.xsolve.workshops.java8.stream.part1.operations;
+
+import pl.xsolve.workshops.java8.stream.Partner;
 
 import java.util.List;
 
@@ -7,6 +9,4 @@ public interface StreamsPart1 {
 
     Partner findSmartestBlonde(List<Partner> potentialPartners);
 
-    //TODO: remove?
-    void addYears(int i, List<Partner> partners);
 }

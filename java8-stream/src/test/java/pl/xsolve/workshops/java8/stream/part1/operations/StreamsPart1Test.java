@@ -1,9 +1,10 @@
-package pl.xsolve.workshops.java8.stream.part1;
+package pl.xsolve.workshops.java8.stream.part1.operations;
 
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import pl.xsolve.workshops.java8.stream.Partner;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,10 +17,10 @@ public class StreamsPart1Test {
     @Before
     public void setup(){
         partners = Arrays.asList(
-                new Partner(true, 100, 17),
-                new Partner(false, 180, 30),
-                new Partner(true, 160, 25),
-                new Partner(false, 100, 31)
+                new Partner.Builder().setBlonde(true).setIq(100).setAge(17).build(),
+                new Partner.Builder().setBlonde(false).setIq(180).setAge(30).build(),
+                new Partner.Builder().setBlonde(true).setIq(160).setAge(25).build(),
+                new Partner.Builder().setBlonde(false).setIq(100).setAge(31).build()
         );
     }
 
