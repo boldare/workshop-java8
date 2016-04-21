@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.stream.Stream;
 
-public class LessonOneImpl extends GenericLesson implements LessonOne {
+public class LessonOneSolutionsImpl extends GenericLesson implements LessonOne {
 
     @Override
     public Path buildDirtyFilePath() {

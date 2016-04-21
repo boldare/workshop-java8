@@ -2,7 +2,6 @@ package pl.xsolve.workshops.java8.fileio;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import pl.xsolve.workshops.java8.fileio.dto.RestaurantDto;
 
