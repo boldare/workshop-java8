@@ -1,11 +1,14 @@
-package pl.xsolve.workshops.java8.stream.part3ParallelStream;
+package pl.xsolve.workshops.java8.stream.part3.parallel;
 
 import org.junit.Assert;
 import org.junit.Test;
 import pl.xsolve.workshops.java8.stream.Book;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class ParallelTest {
 
@@ -27,15 +30,15 @@ public class ParallelTest {
 
     @Test
     public void parallelShouldBeFasterThanSequential(){
-
-        long sequentialStart = System.currentTimeMillis();
-        bookService.findByIdsSequentially(bookIds);
-        long sequentialDuration = System.currentTimeMillis() - sequentialStart;
-
-        long parallelStart = System.currentTimeMillis();
-        bookService.findByIdsParalelly(bookIds);
-        long parallelDuration = System.currentTimeMillis() - parallelStart;
+        long sequentialDuration = measureTime(() -> bookService.findByIdsSequentially(bookIds));
+        long parallelDuration = measureTime(() -> bookService.findByIdsParalelly(bookIds));
 
         Assert.assertTrue("parallel: " + parallelDuration + ", sequential: " + sequentialDuration, sequentialDuration > parallelDuration);
+    }
+
+    public long measureTime(Supplier operation){
+        Instant start = Instant.now();
+        operation.get();
+        return Duration.between(start, Instant.now()).toMillis();
     }
 }

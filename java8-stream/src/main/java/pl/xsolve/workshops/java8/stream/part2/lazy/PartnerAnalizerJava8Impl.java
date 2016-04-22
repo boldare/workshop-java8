@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class PartnerAnalizerJava8Impl extends PartnerAnalizer {
+public class PartnerAnalizerJava8Impl extends PartnerAnalizerLazy {
 
     public PartnerAnalizerJava8Impl(Collection<Partner> partners) {
         super(partners);
@@ -36,7 +36,6 @@ public class PartnerAnalizerJava8Impl extends PartnerAnalizer {
                 return p.isBlonde();
             });
     }
-
 
     //TODO: remove solution
     /**
@@ -73,6 +72,5 @@ public class PartnerAnalizerJava8Impl extends PartnerAnalizer {
                 .limit(howMany)
                 .collect(Collectors.toList());
     }
-
 
 }

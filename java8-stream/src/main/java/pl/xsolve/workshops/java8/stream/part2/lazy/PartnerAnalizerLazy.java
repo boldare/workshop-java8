@@ -6,12 +6,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class PartnerAnalizer {
+public abstract class PartnerAnalizerLazy {
 
     protected Collection<Partner> partners;
     protected Integer processedEntriesCounter;
 
-    public PartnerAnalizer(Collection<Partner> partners) {
+    public PartnerAnalizerLazy(Collection<Partner> partners) {
         this.partners = partners;
     }
 
