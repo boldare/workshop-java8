@@ -3,8 +3,6 @@ package pl.xsolve.workshops.java8.fileio.lesson.two;
 import pl.xsolve.workshops.java8.fileio.dto.RestaurantDto;
 import pl.xsolve.workshops.java8.fileio.lesson.one.LessonOneImpl;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -18,7 +16,7 @@ public class LessonTwoImpl extends LessonOneImpl implements LessonTwo {
      * Treść:
      * - Wczytaj wszystkie obiekty z buildDirtyFilePath().
      * - Utwórz
-     * - Odfiltruj wszystkie elementy, które spełniają warunki z isRestaurantAlright()
+     * - Odfiltruj wszystkie elementy, które spełniają warunki z metody isRestaurantAlright()
      * - Zapisz spełniające elementy do pliku dla Path z buildCorrectedFilePath()
      * - Zamknij wszystkie streamy
      *
@@ -47,14 +45,5 @@ public class LessonTwoImpl extends LessonOneImpl implements LessonTwo {
 
     protected Boolean isRestaurantAlright(String restaurant) {
         return restaurant.split(DEFAULT_SEPARATOR).length == 5 && !restaurant.contains(";;");
-    }
-
-    protected void addEntry(BufferedWriter writer, String correctData) {
-        try {
-            writer.write(correctData);
-            writer.newLine();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
