@@ -4,7 +4,7 @@ import pl.xsolve.workshops.java8.stream.Partner;
 
 import java.util.*;
 
-public class PartnerAnalizerOldJavaImpl extends PartnerAnalizer {
+public class PartnerAnalizerOldJavaImpl extends PartnerAnalizerLazy {
 
     public PartnerAnalizerOldJavaImpl(Collection<Partner> partners) {
         super(partners);

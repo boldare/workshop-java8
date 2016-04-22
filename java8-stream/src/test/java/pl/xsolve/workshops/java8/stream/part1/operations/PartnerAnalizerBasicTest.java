@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class StreamsPart1Test {
+public class PartnerAnalizerBasicTest {
 
     private List<Partner> partners = new ArrayList<>();
 
@@ -26,28 +26,51 @@ public class StreamsPart1Test {
 
     @Test
     public void shouldFindAllBlondesOldJava(){
-        List<Partner> blondes = new StreamsPart1OldJavaImpl().findBlondes(partners);
+        List<Partner> blondes = new PartnerAnalizerOldJavaImpl(partners).findBlondes();
         Assert.assertArrayEquals(new String[]{"Roberta", "Conan"},
                 blondes.stream().map(Partner::getName).toArray());
     }
 
     @Test
     public void shouldFindAllBlondesJava8(){
-        List<Partner> blondes = new StreamsPart1Java8Impl().findBlondes(partners);
+        List<Partner> blondes = new PartnerAnalizerOldJavaImpl(partners).findBlondes();
         Assert.assertArrayEquals(new String[]{"Roberta", "Conan"},
                 blondes.stream().map(Partner::getName).toArray());
     }
 
     @Test
     public void shouldFindSmartestBlondeOldJava(){
-        Partner smartestBlonde = new StreamsPart1OldJavaImpl().findSmartestBlonde(partners).get();
+        Partner smartestBlonde = new PartnerAnalizerOldJavaImpl(partners).findSmartestBlonde().get();
         Assert.assertEquals("Conan", smartestBlonde.getName());
     }
 
     @Test
     public void shouldFindSmartestBlondeJava8(){
-        Partner smartestBlonde = new StreamsPart1Java8Impl().findSmartestBlonde(partners).get();
+        Partner smartestBlonde = new PartnerAnalizerJava8Impl(partners).findSmartestBlonde().get();
         Assert.assertEquals("Conan", smartestBlonde.getName());
     }
 
+    @Test
+    public void shouldCalculateAverageAgeOldJava(){
+        int averageAge = new PartnerAnalizerJava8Impl(partners).getAvgAge().get();
+        Assert.assertEquals(25, averageAge);
+    }
+
+    @Test
+    public void shouldCalculateAverageAgeJava8(){
+        int averageAge = new PartnerAnalizerOldJavaImpl(partners).getAvgAge().get();
+        Assert.assertEquals(25, averageAge);
+    }
+
+    @Test
+    public void shouldCalculateAverageIqOldJava(){
+        int averageIq = new PartnerAnalizerJava8Impl(partners).getAvgIq().get();
+        Assert.assertEquals(135, averageIq);
+    }
+
+    @Test
+    public void shouldCalculateAverageIqJava8(){
+        int averageIq = new PartnerAnalizerOldJavaImpl(partners).getAvgIq().get();
+        Assert.assertEquals(135, averageIq);
+    }
 }

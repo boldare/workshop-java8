@@ -1,4 +1,4 @@
-package pl.xsolve.workshops.java8.stream.part3ParallelStream;
+package pl.xsolve.workshops.java8.stream.part3.parallel;
 
 import pl.xsolve.workshops.java8.stream.Book;
 
