@@ -17,67 +17,37 @@ public class StreamsPart1Test {
     @Before
     public void setup(){
         partners = Arrays.asList(
-                new Partner.Builder().setBlonde(true).setIq(100).setAge(17).build(),
-                new Partner.Builder().setBlonde(false).setIq(180).setAge(30).build(),
-                new Partner.Builder().setBlonde(true).setIq(160).setAge(25).build(),
-                new Partner.Builder().setBlonde(false).setIq(100).setAge(31).build()
+                new Partner.Builder().setName("Roberta").setBlonde(true).setIq(100).setAge(17).build(),
+                new Partner.Builder().setName("Elfriede").setBlonde(false).setIq(180).setAge(30).build(),
+                new Partner.Builder().setName("Conan").setBlonde(true).setIq(160).setAge(25).build(),
+                new Partner.Builder().setName("Bruce").setBlonde(false).setIq(100).setAge(31).build()
         );
     }
 
     @Test
     public void shouldFindAllBlondesOldJava(){
         List<Partner> blondes = new StreamsPart1OldJavaImpl().findBlondes(partners);
-
-        Assert.assertArrayEquals(new Partner[]{partners.get(0), partners.get(2)}, blondes.toArray());
+        Assert.assertArrayEquals(new String[]{"Roberta", "Conan"},
+                blondes.stream().map(Partner::getName).toArray());
     }
 
     @Test
     public void shouldFindAllBlondesJava8(){
         List<Partner> blondes = new StreamsPart1Java8Impl().findBlondes(partners);
-
-        Assert.assertArrayEquals(new Partner[]{partners.get(0), partners.get(2)}, blondes.toArray());
+        Assert.assertArrayEquals(new String[]{"Roberta", "Conan"},
+                blondes.stream().map(Partner::getName).toArray());
     }
 
     @Test
     public void shouldFindSmartestBlondeOldJava(){
-        Partner smartestBlonde = new StreamsPart1OldJavaImpl().findSmartestBlonde(partners);
-        Assert.assertEquals(partners.get(2), smartestBlonde);
+        Partner smartestBlonde = new StreamsPart1OldJavaImpl().findSmartestBlonde(partners).get();
+        Assert.assertEquals("Conan", smartestBlonde.getName());
     }
 
     @Test
     public void shouldFindSmartestBlondeJava8(){
-        Partner smartestBlonde = new StreamsPart1Java8Impl().findSmartestBlonde(partners);
-        Assert.assertEquals(partners.get(2), smartestBlonde);
-    }
-
-    @Test
-    public void shouldAddYearsToAgeOldJava(){
-        new StreamsPart1OldJavaImpl().addYears(1, partners);
-        Assert.assertArrayEquals(new Integer[]{18, 31, 26, 32}, partners.stream().map(Partner::getAge).toArray());
-    }
-
-    @Test
-    public void shouldAddYearsToAgeJava8(){
-        new StreamsPart1Java8Impl().addYears(1, partners);
-        Assert.assertArrayEquals(new Integer[]{18, 31, 26, 32}, partners.stream().map(Partner::getAge).toArray());
-    }
-
-    @Test
-    public void parallelStreamShouldBeFasterThanOldJava(){
-        List<Partner> manyPartners = new ArrayList<>();
-        for (int i=0; i<10000; i++){
-            manyPartners.addAll(partners);
-        }
-
-        long startOldJava = System.nanoTime();
-        new StreamsPart1OldJavaImpl().addYears(1, manyPartners);
-        long oldJavaDuration = System.nanoTime() - startOldJava;
-
-        long startParallel = System.nanoTime();
-        new StreamsPart1Java8Impl().addYears(1, manyPartners);
-        long java8Duration = System.nanoTime() - startParallel;
-
-        Assert.assertTrue("old Java: " + oldJavaDuration + ", Java8: " + java8Duration, java8Duration < oldJavaDuration);
+        Partner smartestBlonde = new StreamsPart1Java8Impl().findSmartestBlonde(partners).get();
+        Assert.assertEquals("Conan", smartestBlonde.getName());
     }
 
 }
