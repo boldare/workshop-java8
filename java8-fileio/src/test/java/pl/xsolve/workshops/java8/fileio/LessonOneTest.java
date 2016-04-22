@@ -2,6 +2,8 @@ package pl.xsolve.workshops.java8.fileio;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.xsolve.workshops.java8.fileio.lesson.one.LessonOne;
+import pl.xsolve.workshops.java8.fileio.lesson.one.LessonOneImpl;
 
 import java.io.IOException;
 import java.nio.file.Path;

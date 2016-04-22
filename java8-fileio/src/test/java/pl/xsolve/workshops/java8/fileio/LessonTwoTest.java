@@ -4,6 +4,8 @@ import org.apache.commons.collections.CollectionUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.xsolve.workshops.java8.fileio.dto.RestaurantDto;
+import pl.xsolve.workshops.java8.fileio.lesson.two.LessonTwo;
+import pl.xsolve.workshops.java8.fileio.lesson.two.LessonTwoImpl;
 
 import java.io.IOException;
 import java.nio.file.Files;

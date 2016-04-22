@@ -1,4 +1,4 @@
-package pl.xsolve.workshops.java8.fileio;
+package pl.xsolve.workshops.java8.fileio.lesson.one;
 
 import java.io.IOException;
 import java.nio.file.Path;
