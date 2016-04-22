@@ -1,4 +1,4 @@
-package pl.xsolve.workshops.java8.fileio;
+package pl.xsolve.workshops.java8.fileio.lesson.three;
 
 import pl.xsolve.workshops.java8.fileio.analizer.RestaurantAnalizer;
 import pl.xsolve.workshops.java8.fileio.dto.McDonalds;
@@ -24,7 +24,7 @@ public class LessonThreeOldJavaImpl extends RestaurantAnalizer {
                     continue;
                 }
 
-                McDonalds restaurant = lineToRestaurant(line);
+                McDonalds restaurant = toMcDonalds(line);
 
                 if (restaurant != null) {
                     if (!restaurant.getFreeWiFi()) {

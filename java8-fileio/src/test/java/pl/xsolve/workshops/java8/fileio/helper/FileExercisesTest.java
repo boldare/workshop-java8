@@ -3,8 +3,8 @@ package pl.xsolve.workshops.java8.fileio.helper;
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Assert;
 import org.junit.Test;
-import pl.xsolve.workshops.java8.fileio.LessonTwo;
-import pl.xsolve.workshops.java8.fileio.LessonTwoImpl;
+import pl.xsolve.workshops.java8.fileio.lesson.two.LessonTwo;
+import pl.xsolve.workshops.java8.fileio.lesson.two.LessonTwoSolutionsImpl;
 import pl.xsolve.workshops.java8.fileio.dto.RestaurantDto;
 
 import java.io.IOException;
@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 
 public class FileExercisesTest {
 
-    protected LessonTwo filesExercises = new LessonTwoImpl();
+    protected LessonTwo filesExercises = new LessonTwoSolutionsImpl();
 
     @Test
     public void testOpenAndCloseStream() throws IOException {

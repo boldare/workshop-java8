@@ -1,6 +1,7 @@
-package pl.xsolve.workshops.java8.fileio;
+package pl.xsolve.workshops.java8.fileio.lesson.two;
 
 import pl.xsolve.workshops.java8.fileio.dto.RestaurantDto;
+import pl.xsolve.workshops.java8.fileio.lesson.one.LessonOneSolutionsImpl;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -12,7 +13,7 @@ import java.util.stream.Stream;
 
 import static pl.xsolve.workshops.java8.fileio.dto.RestaurantDto.DEFAULT_SEPARATOR;
 
-public class LessonTwoImpl extends LessonOneSolutionsImpl implements LessonTwo {
+public class LessonTwoSolutionsImpl extends LessonOneSolutionsImpl implements LessonTwo {
 
     @Override
     public void correctData() {

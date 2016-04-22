@@ -1,4 +1,6 @@
-package pl.xsolve.workshops.java8.fileio;
+package pl.xsolve.workshops.java8.fileio.lesson.one;
+
+import pl.xsolve.workshops.java8.fileio.GenericLesson;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,6 +1,7 @@
-package pl.xsolve.workshops.java8.fileio;
+package pl.xsolve.workshops.java8.fileio.lesson.two;
 
 import pl.xsolve.workshops.java8.fileio.dto.RestaurantDto;
+import pl.xsolve.workshops.java8.fileio.lesson.one.LessonOne;
 
 import java.util.List;
 import java.util.stream.Stream;

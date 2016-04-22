@@ -25,7 +25,7 @@ public abstract class RestaurantAnalizer extends GenericLesson {
 
     public abstract boolean isAllEntriesFreeWifi(String fileName);
 
-    protected McDonalds lineToRestaurant(String line) {
+    protected McDonalds toMcDonalds(String line) {
         if (line != null && !line.isEmpty()) {
             processedLinesCounter++;
             String[] columns = line.split(SEPARATOR);
