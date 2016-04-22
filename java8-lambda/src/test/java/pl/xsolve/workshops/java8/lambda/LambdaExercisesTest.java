@@ -49,7 +49,7 @@ public abstract class LambdaExercisesTest {
     }
 
     @Test
-    public void shouldMultipyBy2InThread() throws ExecutionException, InterruptedException {
+    public void shouldMultipyInThread() throws ExecutionException, InterruptedException {
         Future<Integer> actual = lambdaExercises.multiply(65536, 42);
         Integer expected = 2752512;
 
