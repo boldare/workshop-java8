@@ -2,10 +2,6 @@ package pl.xsolve.workshops.java8.fileio.lesson.three;
 
 import pl.xsolve.workshops.java8.fileio.analizer.RestaurantAnalizer;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.stream.Stream;
-
 public class LessonThreeImpl extends RestaurantAnalizer {
 
     /**
